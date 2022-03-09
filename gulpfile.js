@@ -7,6 +7,7 @@ function copy(cb) {
     cb();
 }
 exports.copy = copy;
+// run: gulp copy
 
 // BUILD SASS TO CSS
 const sass = require('gulp-sass')(require('sass'));
@@ -17,6 +18,7 @@ function generateCSS(cb) {
     cb();
 }
 exports.css = generateCSS;
+// run: gulp css
 
 // BUILD EJS TO HTML AND RENAME
 const ejs = require("gulp-ejs");
@@ -33,6 +35,7 @@ function generateHTML(cb) {
     cb();
 }
 exports.html = generateHTML;
+// run: gulp html
 
 // START ELSLINT
 const eslint = require("gulp-eslint");
@@ -46,6 +49,7 @@ function runLinter(cb) {
         });
 }
 exports.lint = runLinter;
+// run: gulp lint
 
 // WATCHING
 function watchFiles(cb) {
@@ -54,3 +58,4 @@ function watchFiles(cb) {
     watch([ '**/*.js', '!node_modules/**'], parallel(runLinter));
 }
 exports.watch = watchFiles;
+// run: gulp watch
